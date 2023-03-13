@@ -1,0 +1,113 @@
+﻿<link href="~/Content/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/web/css/contact.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/web/css/style.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/web/css/fontawesome-all.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+      rel="stylesheet">
+
+@using Entity_Layer.Concrete
+@model List<Iletisim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@Html.Partial("AlbumlerNavbarPartial");
+
+<div class="backgro_mh">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heding">
+                    <h2>İLETİŞİM</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <section class="main-content-w3layouts-agileits">
+
+
+        <p class="sub text-center">İstek ve şikayetlerinizi bekliyoruz...</p>
+        <div class="contact-map inner-sec">
+
+            <iframe src="https://www.google.com/maps/d/embed?mid=1J4ROMe6IOBw_DI5BTaBvz6HgFes&hl=en_US&ehbc=2E312F"
+                    class="map" style="border: 10px; height: 500px; margin-left:15px;margin-right:15px" allowfullscreen=""></iframe>
+        </div>
+        <br />
+        <br />
+       
+       
+        <div class="ad-inf-sec bg-light">
+            <div class="container">
+                <div class="address row">
+
+                    <div class="col-lg-4 address-grid">
+                        <div class="row address-info">
+                            <div class="col-md-4 address-left text-center">
+                                <i class="far fa-map"></i>
+                            </div>
+                            <div class="col-md-8 address-right text-left">
+                                <h6>Adres</h6>
+                                <p>
+                                    @Model[0].Iletisim_Adres
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 address-grid">
+                        <div class="row address-info">
+                            <div class="col-md-4 address-left text-center">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="col-md-8 address-right text-left">
+                                <h6>Email</h6>
+                                <p>
+                                   
+                                    <a href="mailto:example@email.com"> @Model[0].Iletisim_Mail</a>
+
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 address-grid">
+                        <div class="row address-info">
+                            <div class="col-md-4 address-left text-center">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div>
+                                <div class="col-md-8 address-right text-left">
+                                    <h6>TELEFON</h6>
+                                    <p>@Model[0].Iletisim_Tel</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

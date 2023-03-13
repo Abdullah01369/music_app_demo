@@ -1,0 +1,34 @@
+﻿@model Entity_Layer.Concrete.Sarkilar
+@{
+    ViewBag.Title = "Sarki_Guncelle";
+    Layout = "~/Views/Shared/Yonetim_Layout.cshtml";
+}
+
+<h2>Sarki_Guncelle</h2>
+
+
+<div>
+
+    <link href="~/Content/web/css/bootstrap.css" rel="stylesheet" />
+    @using (Html.BeginForm("Sarki_Guncelle", "Sarkilar", FormMethod.Post))
+    {
+        <div class="form-control">
+            <br />
+            <br />
+            @Html.Label("Şarki Adı")
+            @Html.TextBoxFor(x => x.Sarki_Ad, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Sarki_Ad)
+            <br /><br />
+            @Html.Label("Çıkış Yılı")
+            @Html.TextAreaFor(x => x.Sarki_Cikis_Yılı, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Sarki_Cikis_Yılı)
+
+            
+
+            <br /><br />
+            <button class="btn btn-info" id="btnAddCategory">Güncelle</button> 
+
+        </div>
+    }
+</div>
+

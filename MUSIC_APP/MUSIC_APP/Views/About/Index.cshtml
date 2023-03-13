@@ -1,0 +1,44 @@
+﻿@using Entity_Layer.Concrete
+@model List<About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@Html.Partial("AlbumlerNavbarPartial");
+<div class="backgro_mh">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heding">
+                    <h2>HAKKIMIZDA</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- about  -->
+<div id="about" class="about">
+    <div class="container">
+        <div class="row display_boxflex">
+        
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="about-box">
+
+                    <p>@Model[0].Anasayfa_Bilgi_Icerik_About_Uzun</p>
+
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="about-box">
+                    <figure><img src="~/Content/entro/images/about.png" alt="#" /></figure>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end abouts -->
+@Html.Partial("footer_partial")

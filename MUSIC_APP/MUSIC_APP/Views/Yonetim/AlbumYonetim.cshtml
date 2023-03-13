@@ -1,0 +1,53 @@
+﻿@using Entity_Layer.Concrete
+@model List<Albumler>
+@{
+    ViewBag.Title = "AlbumYonetim";
+    Layout = "~/Views/Shared/Yonetim_Layout.cshtml";
+}
+<br />
+<div style="margin:50px">
+    @using (Html.BeginForm("AlbumYonetim", "Yonetim", FormMethod.Post))
+    {
+        <p style="font-size:16px;color:black;font-weight:bold">ARANACAK KELİMEYİ YAZINIZ: @Html.TextBox("p")</p>
+      
+
+        <input class="btn btn-info" type="submit" value="ARA" />
+    }
+</div>
+
+<div style="margin-left: 20px" class="container">
+    <a href="/Albumler/Album_Ekle" target="_blank">
+        <button style="margin-top:20px;margin-left:20px; width:150px;height:50px" class="btn btn-primary">Albüm Ekle</button>
+    </a>
+</div>
+
+<table class="table table-hover" style="border:4px; border-color:black;margin-top:20px;margin-bottom:20px;margin-left:20px">
+    <thead>
+        <tr>
+
+            <th scope="col">ID</th>
+            <th scope="col">AD</th>
+            <th scope="col">SANATÇI ID</th>
+            <th scope="col">GÜNCELLE</th>
+            <th scope="col">SİL</th>
+            <th scope="col">ŞARKI İŞLEM</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Album_Id</th>
+                <td>@item.Album_Ad.ToUpper()</td>
+                <td>@item.Album_Sanatci_Id</td>
+                <td> <a href="/Albumler/Album_Guncelle/@item.Album_Id" class="btn btn-warning"> Güncelle </a> </td>
+                <td> <a href="/Albumler/Album_Sil" class="btn btn-danger"> Sil </a> </td>
+                <td><a href="/Albumler/Album_Sarki_Islem/@item.Album_Id" class="btn btn-info"> Şarkılar </a></td>
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+

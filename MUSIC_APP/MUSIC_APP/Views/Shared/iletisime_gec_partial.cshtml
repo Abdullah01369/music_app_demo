@@ -1,0 +1,67 @@
+﻿@using Entity_Layer.Concrete
+@model List<Iletisim>
+<link href="~/Content/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/web/css/contact.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/web/css/style.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/web/css/fontawesome-all.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+      rel="stylesheet">
+
+
+<div class="container">
+    <div class="row">
+        @*<div class="col-md-12">
+            <form class="contact_bg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="titlepage">
+                            <h2>İLETİŞİME GEÇ</h2>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="ADIN" type="text" name="Your Name">
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="E-MAİL" type="text" name="Your Email">
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="TELEFON" type="text" name="Your Phone">
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="textarea" placeholder="MESAJ" type="text" name="Message"></textarea>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <button class="send">GÖNDER</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>*@
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+                    <div class="address">
+                        <ul class="loca">
+                            <li>
+                                <a href="#">@Model[0].Iletisim_Adres<img src="~/Content/entro/icon/loc.png" alt="#" /></a>
+
+                            <li>
+
+                                <a href="#">@Model[0].Iletisim_Tel <img src="~/Content/entro/icon/call.png" alt="#" /></a>
+                            </li>
+                            <li>
+                                <a href="#">@Model[0].Iletisim_Mail <img src="~/Content/entro/icon/email.png" alt="#" /></a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

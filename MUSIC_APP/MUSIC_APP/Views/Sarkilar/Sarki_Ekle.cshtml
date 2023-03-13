@@ -1,0 +1,38 @@
+﻿@model Entity_Layer.Concrete.Sarkilar
+@{
+    ViewBag.Title = "Sarki_Ekle";
+    Layout = "~/Views/Shared/Yonetim_Layout.cshtml";
+}
+
+<h2>ŞARKI EKLE</h2>
+
+<div>
+
+    
+    @using (Html.BeginForm("Sarki_Ekle", "Sarkilar", FormMethod.Post))
+    {
+    <div class="form-control">
+        <br />
+        <br />
+        @Html.Label("Şarkı Adı")
+        @Html.TextBoxFor(x => x.Sarki_Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Sarki_Ad)
+        <br /><br />
+        @Html.Label("Çıkış Yılı")
+        @Html.TextAreaFor(x => x.Sarki_Cikis_Yılı, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Sarki_Cikis_Yılı)
+
+        <br /><br />
+        @Html.Label("Şarkı Sanatçı ID")
+        @Html.TextAreaFor(x => x.Sarki_Sanatci_Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Sarki_Sanatci_Id)
+
+        <br /><br />
+        @Html.Label("Albüm ID")
+        @Html.TextAreaFor(x => x.Sarkı_Album_Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Sarkı_Album_Id)
+        <button class="btn btn-info" id="btnAddCategory">Kaydet</button> 
+
+    </div>
+    }
+</div>

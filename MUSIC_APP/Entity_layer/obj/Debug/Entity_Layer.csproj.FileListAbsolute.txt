@@ -1,0 +1,8 @@
+C:\Users\icerd\source\repos\MUSIC_APP\Entity_layer\bin\Debug\Entity_layer.dll
+C:\Users\icerd\source\repos\MUSIC_APP\Entity_layer\bin\Debug\Entity_layer.pdb
+C:\Users\icerd\source\repos\MUSIC_APP\Entity_layer\obj\Debug\Entity_Layer.csproj.CoreCompileInputs.cache
+C:\Users\icerd\source\repos\MUSIC_APP\Entity_layer\obj\Debug\Entity_layer.dll
+C:\Users\icerd\source\repos\MUSIC_APP\Entity_layer\obj\Debug\Entity_layer.pdb
+C:\Users\icerd\source\repos\MUSIC_APP\Entity_layer\bin\Debug\Dapper.dll
+C:\Users\icerd\source\repos\MUSIC_APP\Entity_layer\bin\Debug\Dapper.xml
+C:\Users\icerd\source\repos\MUSIC_APP\Entity_layer\obj\Debug\Entity_Layer.csproj.CopyComplete

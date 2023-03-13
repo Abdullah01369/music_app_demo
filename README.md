@@ -1,2 +1,6 @@
-# music_app_demo
- mvc kullanıldı
+
+
+
+mvc kullanıldı
+
+katmanlı mimari kullanıldı

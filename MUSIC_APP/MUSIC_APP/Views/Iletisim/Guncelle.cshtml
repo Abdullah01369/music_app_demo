@@ -1,0 +1,36 @@
+﻿
+@model Entity_Layer.Concrete.Iletisim
+@{
+    ViewBag.Title = "İletisim_Guncelle";
+    Layout = "~/Views/Shared/Yonetim_Layout.cshtml";
+}
+
+<div>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @using (Html.BeginForm("Guncelle", "Iletisim", FormMethod.Post))
+    {
+        <div class="form-control">
+            <br />
+            <br />
+            @Html.Label("ADRES")
+            @Html.TextBoxFor(x => x.Iletisim_Adres, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Iletisim_Adres)
+            <br /><br />
+            @Html.Label("TELEFON")
+            @Html.TextBoxFor(x => x.Iletisim_Tel, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Iletisim_Tel)
+
+            <br /><br />
+            @Html.Label("E-MAİL")
+            @Html.TextBoxFor(x => x.Iletisim_Mail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Iletisim_Mail)
+
+            <br /><br />
+            <button class="btn btn-info" id="btnAddCategory">GÜNCELLE</button> 
+
+        </div>
+    }
+</div>
+
+

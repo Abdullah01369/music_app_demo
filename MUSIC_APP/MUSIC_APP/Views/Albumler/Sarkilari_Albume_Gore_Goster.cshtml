@@ -1,0 +1,83 @@
+﻿@using Entity_Layer.Concrete
+@model List<Sarkilar>
+@{
+    ViewBag.Title = "Sarkilari_Albume_Gore_Goster";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+<script src="~/Content/web/js/bootstrap.js"></script>
+<link href="~/Content/web/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/web/css/style.css" rel="stylesheet" />
+<link href="~/Content/web/css/fontawesome-all.css" rel="stylesheet" />
+@Html.Partial("AlbumlerNavbarPartial");
+
+<div class="backgro_mh">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heding">
+                    <h2>ALBÜMLER</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">ALBUM ADI BURAYA GELECEK</h3>
+        <div class="inner-sec">
+            <!--left-->
+            <div class="left-blog-info-w3layouts-agileits text-left">
+                <div class="row" style="margin:30px">
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="col-lg-4 card">
+                            <a href="single.html">
+                                <img src="~/Content/entro/images/teo.png" class="card-img-top img-fluid" alt="">
+                            </a>
+                            <div class="card-body">
+                                <ul class="blog-icons my-4">
+                                    <li>
+                                        <a href="#">
+                                            <i class="far fa-calendar-alt"></i> @(((DateTime)item.Sarki_Cikis_Yılı).ToString("dd.mm.yyyy"))
+                                        </a>
+                                        <br />
+                                    </li>
+
+                                    <li class="mx-2">
+                                        <a href="#">
+                                            <i class="far fa-music"></i> @item.Sarki_Ad.ToUpper()
+                                        </a>
+                                        <br />
+                                    </li>
+                                    <li>
+
+                                        <a href="#">
+                                            <i class="fas fa-eye"></i> @item.Sarki_Dinlenme_Sayi
+                                        </a>
+                                        <br />
+
+                                    </li>
+
+                                </ul>
+                                <h5 class="card-title">
+                                    <a href="#"></a>
+                                </h5>
+
+                                <a href="#" class="btn btn-primary read-m">DİNLE</a> <br />
+
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+                <!--//left-->
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Partial("footer_partial")
+

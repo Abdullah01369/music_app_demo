@@ -1,0 +1,44 @@
+﻿@model Entity_Layer.Concrete.Sarkicilar
+@{
+    ViewBag.Title = "Sarkici_Guncelle";
+    Layout = "~/Views/Shared/Yonetim_Layout.cshtml";
+}
+
+<h2>Sarkici_Guncelle</h2>
+
+<div>
+
+
+    @using (Html.BeginForm("Sarkici_Guncelle", "Sarkicilar", FormMethod.Post))
+    {
+        <div class="form-control">
+            <br />
+            <br />
+            @Html.Label("Şarkıcı Adı")
+            @Html.TextBoxFor(x => x.Sarkici_Ad, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Sarkici_Ad)
+            <br /><br />
+            @Html.Label("Soyadı")
+            @Html.TextAreaFor(x => x.Sarkici_Soyad, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Sarkici_Soyad)
+
+            <br /><br />
+            @Html.Label("Şarkıcı Unvan")
+            @Html.TextAreaFor(x => x.Sarkici_Unvan, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Sarkici_Unvan)
+
+            <br /><br />
+            @Html.Label("Doğum Yılı")
+            @Html.TextAreaFor(x => x.Sarkici_Dogum_Yili, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Sarkici_Dogum_Yili)
+            <br /><br />
+            @Html.Label("Fotoğraf Adres")
+            @Html.TextAreaFor(x => x.Sarkici_Fotograf_Yolu, new { @class = "form-control" })
+            <br /><br />
+            @*Html.ValidationMessageFor(x => x.)*@
+            <button class="btn btn-info" id="btnAddCategory">GÜNCELLE</button>
+
+        </div>
+    }
+</div>
+

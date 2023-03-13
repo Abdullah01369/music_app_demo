@@ -1,0 +1,75 @@
+﻿@using Entity_Layer.Concrete
+@model List<Sarkicilar>
+@{
+    ViewBag.Title = "Sarkici_Listele_Yonetim";
+    Layout = "~/Views/Shared/Yonetim_Layout.cshtml";
+}
+
+@{string aktiflik = " "; }
+
+
+
+<div>
+
+    <table class="table table-hover" style="border:4px; border-color:black;margin-top:20px;margin-bottom:20px;margin-left:20px">
+        <br />
+        <div style="margin:50px">
+            @using (Html.BeginForm("Sarkici_Listele_Yonetim", "Sarkicilar", FormMethod.Post))
+            {
+                <p style="font-size:16px;color:black;font-weight:bold">ARANACAK KELİMEYİ YAZINIZ: @Html.TextBox("p")</p>
+
+
+                <input class="btn btn-info" type="submit" value="ARA" />
+            }
+        </div>
+        <div style="margin-left: 20px" class="container">
+            <a href="/Sarkicilar/Sarkici_Ekle" target="_blank">
+                <button style="margin-top:20px;margin-left:20px; width:150px;height:50px" class="btn btn-primary">ŞARKICI EKLE</button>
+            </a>
+        </div>
+        <thead>
+            <tr>
+
+                <th scope="col">ID</th>
+                <th scope="col">AD</th>
+                <th scope="col">SOYAD</th>
+                <th scope="col">GÜNCELLE</th>
+                <th scope="col">SİL</th>
+                <th scope="col">ŞARKILAR</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    @if (item.Sarkici_Aktiflik = true)
+                    {
+                        aktiflik = "AKTİF";
+                    }
+                    @if (item.Sarkici_Aktiflik = false)
+                    {
+                        aktiflik = "İNAKTİF";
+                    }
+                    <th scope="row">@item.Sarkici_Id</th>
+                    <td>@item.Sarkici_Ad.ToUpper()</td>
+                    <td>@item.Sarkici_Soyad.ToUpper()</td>
+                    <td><a href="/Sarkicilar/Sarkici_Guncelle/@item.Sarkici_Id" class="btn btn-warning"> GÜNCELLE </a></td>
+                    <td><a href="#" class="btn btn-secondary"> @aktiflik </a></td>
+                    <td><a href="/Sarkicilar/Sarki_Getir_Sanatciya_Gore/@item.Sarkici_Id" class="btn btn-info"> ŞARKILAR </a></td>
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+

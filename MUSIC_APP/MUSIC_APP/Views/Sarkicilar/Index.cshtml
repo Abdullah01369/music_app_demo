@@ -1,0 +1,68 @@
+﻿@using Entity_Layer.Concrete
+@model List<Sarkicilar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+
+@Html.Partial("AlbumlerNavbarPartial");
+
+<div class="backgro_mh">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heding">
+                    <h2>ŞARKICILAR</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<div style="margin:50px">
+    @using (Html.BeginForm("Index", "Sarkicilar", FormMethod.Post))
+    {
+        <p style="font-size:16px;color:black;font-weight:bold">ARANACAK KELİMEYİ YAZINIZ: @Html.TextBox("p")</p>
+        <br />
+
+        <input class="btn btn-info" type="submit" value="ARA" />
+    }
+</div>
+
+<div style="border:30px">
+
+    <table class="table table-hover" style="border:4px; border-color:black;margin-top:20px;margin-bottom:20px;margin-left:20px">
+        <thead>
+            <tr>
+
+                <th scope="col">ID</th>
+                <th scope="col">AD</th>
+                <th scope="col">SOYAD</th>
+                <th scope="col">ŞARKILAR</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Sarkici_Id</th>
+                    <td>@item.Sarkici_Ad.ToUpper()</td>
+                    <td>@item.Sarkici_Soyad.ToUpper()</td>
+                    <td><a href="/Sarkicilar/sarki_Getir/@item.Sarkici_Id" class="btn btn-info"> ŞARKILAR </a></td>
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+
+
+
+@Html.Partial("footer_partial")
+

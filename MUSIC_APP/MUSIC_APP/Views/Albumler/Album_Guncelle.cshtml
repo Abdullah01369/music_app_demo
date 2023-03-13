@@ -1,0 +1,34 @@
+﻿@model Entity_Layer.Concrete.Albumler
+@{
+    ViewBag.Title = "Album_Guncelle";
+    Layout = "~/Views/Shared/Yonetim_Layout.cshtml";
+}
+
+<div>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @using (Html.BeginForm("Album_Guncelle", "Albumler", FormMethod.Post))
+    {
+        <div class="form-control">
+            <br />
+            <br />
+            @Html.Label("Albüm Adı")
+            @Html.TextBoxFor(x => x.Album_Ad, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Album_Ad)
+            <br /><br />
+            @Html.Label("Çıkış Yılı")
+            @Html.TextAreaFor(x => x.Album_Cikis_Yil, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Album_Cikis_Yil)
+
+            <br /><br />
+            @Html.Label("Sanatçı ID")
+            @Html.TextAreaFor(x => x.Album_Sanatci_Id, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Album_Sanatci_Id)
+
+            <br /><br />
+            <button class="btn btn-info" id="btnAddCategory">Kaydet</button> @*36.ders sonu*@
+
+        </div>
+    }
+</div>
+
