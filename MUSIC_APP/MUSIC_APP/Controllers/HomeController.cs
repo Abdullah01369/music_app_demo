@@ -10,6 +10,8 @@ namespace MUSIC_APP.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+
+        [Authorize]
         public ActionResult Index()
         {
             About_Services about_Services = new About_Services();

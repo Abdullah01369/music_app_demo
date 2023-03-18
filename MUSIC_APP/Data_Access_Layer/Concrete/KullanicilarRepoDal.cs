@@ -76,5 +76,46 @@ namespace Data_Access_Layer.Concrete.Dapper
 
 
         }
+
+        public Kullanicilar Login_Kullanici(Kullanicilar t)
+        {
+            DynamicParameters dynamic = new DynamicParameters();
+
+            dynamic.Add("@p1", t.Kullanıcı_Mail);
+            dynamic.Add("@p2", t.Kullanıcı_Sifre);
+            dbconnection.Open();
+            var veri = dbconnection.QueryFirstOrDefault<Kullanicilar>("select *from Kullanicilar where Kullanıcı_Mail=@p1 and Kullanıcı_Sifre=@p2", dynamic);
+            dbconnection.Close();
+            return veri;
+        }
+
+
     }
 }
+
+
+//public IActionResult Login(string username, string password)
+//{
+//  
+//        var query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
+//        var user = connection.QueryFirstOrDefault<User>(query, new { Username = username, Password = password });
+
+//        // Kullanıcıyı doğrulayın
+//        if (user != null)
+//        {
+//            // Kullanıcı doğrulandı, kullanıcı bilgilerini bir cookie veya session ile saklayabilirsiniz
+//            // Örneğin:
+//            HttpContext.Session.SetString("username", user.Username);
+//            HttpContext.Session.SetInt32("userid", user.Id);
+
+//            // Kullanıcıyı başka bir sayfaya yönlendirin
+//            return RedirectToAction("Index", "Home");
+//        }
+//        else
+//        {
+//            // Kullanıcı doğrulanamadı, hata mesajı gösterin
+//            ViewBag.Error = "Kullanıcı adı veya şifre hatalı!";
+//            return View();
+//        }
+//    }
+//}

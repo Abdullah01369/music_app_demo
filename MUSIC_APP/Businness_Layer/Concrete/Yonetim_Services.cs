@@ -1,4 +1,5 @@
 ﻿using Data_Access_Layer.Concrete;
+using Entity_layer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,10 @@ namespace Businness_Layer.Concrete
     {
         YonetimRepoDal yrd = new YonetimRepoDal();
 
+        public Admins AdminRol(string Admin_Mail)
+        {
+            return yrd.Admin_Rol_Al(Admin_Mail);
+        }
         public int albumsayi()
         {
             return yrd.AlbumSayi();

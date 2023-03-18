@@ -42,5 +42,11 @@ namespace Businness_Layer.Concrete
             }
 
         }
+
+
+        public Kullanicilar Login_Kullanici(Kullanicilar k) 
+        {
+           return krd.Login_Kullanici(k);
+        }
     }
 }

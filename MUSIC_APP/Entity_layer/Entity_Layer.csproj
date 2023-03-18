@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\About.cs" />
+    <Compile Include="Concrete\Admins.cs" />
     <Compile Include="Concrete\Albumler.cs" />
     <Compile Include="Concrete\Iletisim.cs" />
     <Compile Include="Concrete\Kullanicilar.cs" />

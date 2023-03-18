@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Entity_layer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer.Concrete
 {
-   public class YonetimRepoDal
+    public class YonetimRepoDal
     {
         public readonly IDbConnection dbconnection;
 
@@ -21,10 +22,21 @@ namespace Data_Access_Layer.Concrete
 
         }
 
-        public int AlbumSayi() 
+
+        public Admins Admin_Rol_Al(string Admin_Mail)
+        {
+            DynamicParameters dp = new DynamicParameters();
+            dp.Add("@p1", Admin_Mail);
+            dbconnection.Open();
+            var admin_veri = dbconnection.QueryFirstOrDefault("select *from Admins where Admin_Mail=@p1");
+            dbconnection.Close();
+            return admin_veri;
+        }
+
+        public int AlbumSayi()
         {
             dbconnection.Open();
-           int albumSayisi = dbconnection.ExecuteScalar<int>("SELECT COUNT(Album_Id) FROM Albumler");
+            int albumSayisi = dbconnection.ExecuteScalar<int>("SELECT COUNT(Album_Id) FROM Albumler");
             dbconnection.Close();
             return albumSayisi;
         }
@@ -43,7 +55,7 @@ namespace Data_Access_Layer.Concrete
             return SanatciSayisi;
         }
 
-        public string en_cok_dinlenen() 
+        public string en_cok_dinlenen()
         {
             dbconnection.Open();
             string sarki = dbconnection.ExecuteScalar<string>(" SELECT TOP 1 Sarki_Ad FROM Sarkilar ORDER BY Sarki_Dinlenme_Sayi DESC");
@@ -51,7 +63,7 @@ namespace Data_Access_Layer.Concrete
             return sarki;
         }
     }
-   
+
 
 
 }
